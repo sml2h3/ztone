@@ -6,6 +6,4 @@
 # @Software: PyCharm
 
 from System.System import System
-from Config.Config import Server
-
 System().run()

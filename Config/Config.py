@@ -18,13 +18,39 @@ WEB = {
     #HTTP 异常的错误处理，而是像对待其它异常一样， 通过异常栈让它冒泡地抛出。这对于需要找出 HTTP 异常源头的可怕调试情形是有用的。
 }
 '''
-    系统角色
-    参数说明：
-        CHAR
+    系统设置
+        CHAR:角色设置
             master:主控机、crawler:数据抓取机、dataer:数据存储机
             默认为master
 
 '''
 Server = {
     "CHAR": "master",
+}
+'''
+    代理池设置
+        TYPE:代理类型
+            api:通过其他网站提供的api获取代理ip、list:私有的代理ip列表、head:通过添加head代理头自动进行代理
+'''
+PROXY = {
+    "TYPE": "api",
+    "HTTP": "http://www.ip.cn/",
+    "HTTPS": "https://www.baidu.com",
+    "API": {
+        "URL": "http://20686860202824048.standard.hutoudaili.com/?num=50&area_type=0&anonymity=0&order=1", #*
+        "USERNAME": "",
+        "PASSWORD": "",
+        "SPLIT": "\r\n",
+        "OTHER": {}
+    },
+    'VALIDATE_THREAD': 20,
+    "LIST": [
+        "127.0.0.1:8080"
+    ],
+    "HEAD": {
+        "URL": "",
+        "USERNAME": "",
+        "PASSWORD": "",
+        "OTHER": {}
+    }
 }
